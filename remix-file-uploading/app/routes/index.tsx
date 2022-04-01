@@ -3,8 +3,6 @@ import { ActionFunction, Form, json, unstable_createMemoryUploadHandler, unstabl
 
 
 export const action: ActionFunction = async ({ request }) => {
-
-
   const uploadHandler = unstable_createMemoryUploadHandler({
     maxFileSize: 5_000_000
   })
@@ -23,7 +21,7 @@ export const action: ActionFunction = async ({ request }) => {
 export default function Index() {
   return (
     <Form method="post" encType="multipart/form-data">
-      <input type="text" name="name" />
+      <input type="text" name="name" placeholder="enter name" />
       <input type="file" name="file" />
       <button>submit</button>
     </Form>
